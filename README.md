@@ -1,12 +1,12 @@
-# happy-init
+# Happy-Init
 
-npm 包初始化命令行工具，帮助快速初始化 npm 包工程。
+Happy-Init is a cli tool that help you develop and release npm package easily.
 
-提供各种类型的 npm 包工程模板，包括
+Happy-Init provides multiple kinds of boilerplate package,includes:
 
-- nodejs 模块
-- ts 模块库
-- react 组件库
-- mono-repo
-  - ts 模块库
-  - react 组件库
+- [ ] [ES package]()
+- [ ] [TS package]()
+- [ ] [React component package]()
+
+Each boilerplate contains complete development dependencies and workflow from initialization to release.
+
