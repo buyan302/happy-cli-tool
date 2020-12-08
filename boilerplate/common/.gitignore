@@ -4,8 +4,8 @@
 **/node_modules
 
 # production
-/dist
-/build
+/es
+/lib
 
 # misc
 .DS_Store
