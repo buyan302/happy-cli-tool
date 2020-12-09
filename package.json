@@ -1,0 +1,77 @@
+{
+  "name": "happy-init",
+  "version": "1.0.0",
+  "description": "npm cli tool",
+  "scripts": {
+    "build": "cross-env rm -rf es lib && MODULE=cjs babel src --out-dir lib && babel src --out-dir es",
+    "lint": "eslint \"{src,__tests__}/**/*.js\" --fix --format codeframe",
+    "lint-staged": "lint-staged",
+    "prettier": "prettier -c --write \"**/*.{js,md,json}\"",
+    "test": "jest --forceExit --detectOpenHandles --passWithNoTests --config jest.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buyan302/happy-init.git"
+  },
+  "keywords": [
+    "cli",
+    "tool",
+    "npm",
+    "es",
+    "ts",
+    "react"
+  ],
+  "author": "buyan302",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buyan302/happy-init/issues"
+  },
+  "homepage": "https://github.com/buyan302/happy-init#readme",
+  "lint-staged": {
+    "**/*.js": [
+      "npm run lint",
+      "git add"
+    ],
+    "**/*.{md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-publish": "npm run build"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.3.5",
+    "jest-cli": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "@babel/runtime-corejs3": "^7.12.5",
+    "core-js": "^3.8.1",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
