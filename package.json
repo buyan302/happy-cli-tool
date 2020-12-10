@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "cross-env rm -rf es lib",
-    "compile": "cross-env MODULE=cjs babel src --out-dir lib",
+    "compile": "babel src --out-dir lib",
     "lint": "eslint \"{src,__tests__}/**/*.js\" --fix --format codeframe",
     "lint-staged": "lint-staged",
     "prettier": "prettier -c --write \"**/*.{js,md,json}\"",

@@ -5,6 +5,8 @@
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "cross-env rm -rf es lib",
     "lint": "eslint \"{src,__tests__}/**/*.js\" --fix --format codeframe",
     "lint-staged": "lint-staged",
     "prettier": "prettier -c --write \"**/*.{js,md,json}\"",

@@ -1,0 +1,42 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": "cjs"
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/transform-runtime",
+      {
+        "corejs": 3
+      }
+    ],
+    [
+      "@babel/proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "modules": false
+          }
+        ]
+      ]
+    }
+  }
+}
