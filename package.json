@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "npm cli tool",
   "scripts": {
-    "build": "cross-env rm -rf es lib && MODULE=cjs babel src --out-dir lib && babel src --out-dir es",
+    "build": "npm run clean && npm run compile",
+    "clean": "cross-env rm -rf es lib",
+    "compile": "cross-env MODULE=cjs babel src --out-dir lib",
     "lint": "eslint \"{src,__tests__}/**/*.js\" --fix --format codeframe",
     "lint-staged": "lint-staged",
     "prettier": "prettier -c --write \"**/*.{js,md,json}\"",
     "test": "jest --forceExit --detectOpenHandles --passWithNoTests --config jest.config.json"
+  },
+  "bin": {
+    "happy": "./bin/happy.js"
   },
   "repository": {
     "type": "git",
@@ -44,6 +49,9 @@
       "pre-publish": "npm run build"
     }
   },
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
@@ -71,7 +79,10 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@babel/runtime-corejs3": "^7.12.5",
+    "chalk": "^4.1.0",
+    "commander": "^6.2.0",
     "core-js": "^3.8.1",
+    "execa": "^5.0.0",
     "regenerator-runtime": "^0.13.7"
   }
 }

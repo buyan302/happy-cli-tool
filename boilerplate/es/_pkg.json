@@ -1,5 +1,7 @@
 {
   "scripts": {
-    "build": "cross-env rm -rf es lib && MODULE=cjs babel src --out-dir lib && babel src --out-dir es"
+    "build": "npm run clean && npm run compile",
+    "clean": "cross-env rm -rf es lib",
+    "compile": "MODULE=cjs babel src --out-dir lib && babel src --out-dir es"
   }
 }
