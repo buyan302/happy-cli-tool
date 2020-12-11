@@ -13,7 +13,7 @@ A robust npm package should concern following aspects:
 
 Happy-Init provides multiple kinds of boilerplate package,includes:
 
-- [ ] ES package
+- [x] ES package
 - [ ] TS package
 - [ ] React component package
 
@@ -24,7 +24,7 @@ Each boilerplate contains complete development dependencies and workflow from in
 ## Installation 
 
 ```shell
-# npm install happy-init -g
+$ npm install happy-init -g
 ```
 
 ## Usage
