@@ -1,5 +1,5 @@
 {
-  "type": "./es/index.d.ts",
+  "typings": "./es/index.d.ts",
   "scripts": {
     "compile": "tsc -p tsconfig.json && tsc -p tsconfig.json --outDir es -m ESNEXT -t ESNEXT",
     "lint": "eslint \"{src,__tests__}/**/*.{js,ts}\" --fix --format codeframe",
