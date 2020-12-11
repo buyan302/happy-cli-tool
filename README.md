@@ -8,7 +8,7 @@ A robust npm package should concern following aspects:
 - code quality: eslint,unit test...
 - code compilation tool: babel,webpack...
 - git hooks: precommit,prepublish...
-- release flow: git actions
+- ci/cd: git actions
 - documentation: README.md,CHANGELOG.md...
 
 Happy-Init provides multiple kinds of boilerplate package,includes:
@@ -21,7 +21,7 @@ Each boilerplate contains complete development dependencies and workflow from in
 
 > Initial easily, develop quickly, publish confidently.
 
-## Installation 
+## Installation
 
 ```shell
 $ npm install happy-init -g
@@ -39,8 +39,8 @@ Happy-Init will download specific boilerplate package files and install dependen
 
 ## Cli Args
 
-| args             | description                                             |
-| ---------------- | ------------------------------------------------- |
-| -v, --version    | show the version of Happy-Init                                    |
-| -h, --help       | show the help info                                     |
+| args            | description                                                         |
+| --------------- | ------------------------------------------------------------------- |
+| -v, --version   | show the version of Happy-Init                                      |
+| -h, --help      | show the help info                                                  |
 | init [template] | initial specific boilerplate package files and install dependencies |
