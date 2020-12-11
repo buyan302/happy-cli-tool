@@ -20,3 +20,27 @@ Happy-Init provides multiple kinds of boilerplate package,includes:
 Each boilerplate contains complete development dependencies and workflow from initialization to release.
 
 > Initial easily, develop quickly, publish confidently.
+
+## Installation 
+
+```shell
+# npm install happy-init -g
+```
+
+## Usage
+
+```shell
+$ happy init [es|ts|react]
+```
+
+Happy-Init will download specific boilerplate package files and install dependencies.
+
+![screenshots]('./screenshot.gif)
+
+## Cli Args
+
+| args             | description                                             |
+| ---------------- | ------------------------------------------------- |
+| -v, --version    | show the version of Happy-Init                                    |
+| -h, --help       | show the help info                                     |
+| init [template] | initial specific boilerplate package files and install dependencies |
