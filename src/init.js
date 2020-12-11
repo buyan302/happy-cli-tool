@@ -13,7 +13,7 @@ const bplTmpPath = path.join(rootDir, 'happy-init/boilerplate')
 const commonFilePath = path.join(bplTmpPath, 'common')
 const extendFilePath = path.join(bplTmpPath, 'extend')
 
-function validateArgs(type) {
+function validateArgs(type = 'es') {
   assert(config.pkgTypes.includes(type), 'unknown package type, only support es,ts,react')
 }
 
@@ -32,14 +32,30 @@ function getOriginInfo() {
 }
 
 // handle input info
-async function handleInput(origin) {
+async function handleInput(origin, type = 'es') {
+  const typeChoices = config.pkgTypes.map((t) => ({ title: t, value: t }))
   return prompts(
-    Object.keys(origin).map((key) => ({
-      type: 'text',
-      name: key,
-      message: key,
-      initial: origin[key],
-    }))
+    [
+      {
+        type: 'select',
+        name: 'pkgType',
+        message: 'package type',
+        initial: typeChoices.findIndex(({ value }) => value === type),
+        choices: typeChoices,
+      },
+    ].concat(
+      Object.keys(origin).map((key) => ({
+        type: 'text',
+        name: key,
+        message: key,
+        initial: origin[key],
+      }))
+    ),
+    {
+      onCancel: () => {
+        process.exit(0)
+      },
+    }
   )
 }
 
@@ -88,7 +104,7 @@ function renamePkgJson() {
 
 // npm install
 function npmInstall() {
-  return execa.command(`npm install`, {stdio: 'inherit'})
+  return execa.command(`npm install`, { stdio: 'inherit' })
 }
 
 // error-handler
@@ -103,12 +119,14 @@ export default async (type) => {
     // preprocess
     validateArgs(type)
     const origin = getOriginInfo()
-    const inputValues = await handleInput(origin)
+    const inputValues = await handleInput(origin, type)
+    const { pkgType } = inputValues
+    delete inputValues.pkgType
 
     // download process
-    progress.start(`downloading ${type} package from git...`)
-    await downloadBpl(type)
-    await copyCommonFiles(type)
+    progress.start(`downloading ${pkgType} package from git...`)
+    await downloadBpl(pkgType)
+    await copyCommonFiles(pkgType)
     await copyExtendFiles(inputValues)
     await clearFiles()
     await renamePkgJson()
