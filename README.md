@@ -35,7 +35,7 @@ $ happy init [es|ts|react]
 
 Happy-Init will download specific boilerplate package files and install dependencies.
 
-![screenshots]('./screenshot.gif)
+![screenshots](./screenshot.gif)
 
 ## Cli Args
 
