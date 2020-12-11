@@ -1,6 +1,19 @@
 {
+  "type": "./es/index.d.ts",
+  "scripts": {
+    "compile": "tsc -p tsconfig.json && tsc -p tsconfig.json --outDir es -m ESNEXT -t ESNEXT",
+    "lint": "eslint \"{src,__tests__}/**/*.{js,ts}\" --fix --format codeframe",
+    "prettier": "prettier -c --write \"**/*.{js,ts,md,json}\""
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": ["npm run lint", "git add"]
+  },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/jest": "^26.0.19",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
-    "@typescript-eslint/parser": "^4.9.1"
+    "@typescript-eslint/parser": "^4.9.1",
+    "eslint-plugin-import": "^2.22.1",
+    "typescript": "^4.1.2"
   }
 }

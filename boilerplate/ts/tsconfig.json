@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "lib",
+    "module": "commonjs",
+    "target": "ES5",
+    "sourceMap": false,
+    "baseUrl": ".",
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "rootDirs": ["/src"],
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "coverage", "__tests__"]
+}

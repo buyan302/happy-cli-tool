@@ -1,3 +1,1 @@
-interface Props {
-  a:1, b: 2
-}
+export default (value: number) => value + 1
