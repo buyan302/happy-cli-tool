@@ -83,7 +83,11 @@ function copyExtendFiles(inputValues) {
       if (fs.existsSync(rootFilePath)) {
         const json1 = fs.readJsonSync(filePath)
         const json2 = fs.readJsonSync(rootFilePath)
-        return fs.writeJson(rootFilePath, merge({}, json1, json2, inputValues), { spaces: 2 })
+        return fs.writeJson(
+          rootFilePath,
+          merge({}, json1, json2, file === '_pkg.json' ? inputValues : {}),
+          { spaces: 2 }
+        )
       }
 
       // copy file to root directly

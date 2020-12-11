@@ -1,0 +1,5 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "airbnb-base", "prettier"],
+  "plugins": ["prettier", "node", "promise"]
+}
