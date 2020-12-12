@@ -1,6 +1,22 @@
-# Happy-Init
+# Happy-Npm-Cli
 
-Happy-Init is a cli tool that help you develop and release npm package easily.
+Happy-Npm-Cli is a cli tool that help you develop and release npm package easily.
+
+> Initial easily, develop quickly, publish confidently.
+
+## Installation
+
+```shell
+$ npm install happy-npm-cli -g
+```
+
+## Usage
+
+### `happy init`
+
+```shell
+$ happy init [es|ts|react]
+```
 
 A robust npm package should concern following aspects:
 
@@ -19,28 +35,18 @@ Happy-Init provides multiple kinds of boilerplate package,includes:
 
 Each boilerplate contains complete development dependencies and workflow from initialization to release.
 
-> Initial easily, develop quickly, publish confidently.
-
-## Installation
-
-```shell
-$ npm install happy-init -g
-```
-
-## Usage
-
-```shell
-$ happy init [es|ts|react]
-```
-
-Happy-Init will download specific boilerplate package files and install dependencies.
+After run `happy init`, Happy-Npm-Cli will download specific boilerplate package files and then install dependencies.
 
 ![screenshots](./screenshot.gif)
 
-## Cli Args
+### `happy view`
 
-| args            | description                                                         |
-| --------------- | ------------------------------------------------------------------- |
-| -v, --version   | show the version of Happy-Init                                      |
-| -h, --help      | show the help info                                                  |
-| init [template] | initial specific boilerplate package files and install dependencies |
+Show the basic info of one package as much as possible.
+
+### `happy publish`
+
+Publish package to git or npm registry.
+
+### `happy run`
+
+Execute npm script with environment variables.
