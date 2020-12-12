@@ -39,9 +39,9 @@ After run `happy init`, Happy-Npm-Cli will download specific boilerplate package
 
 ![screenshots](./screenshot.gif)
 
-### `happy view`
+### `happy compare`
 
-Show the basic info of one package as much as possible.
+Compare packages' download frequency,quality,git star count,etc from https://www.npmjs.com/.
 
 ### `happy publish`
 
@@ -50,3 +50,7 @@ Publish package to git or npm registry.
 ### `happy run`
 
 Execute npm script with environment variables.
+
+## More Command?
+
+Leave a issue [here](./issues).
