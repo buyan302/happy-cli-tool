@@ -79,6 +79,7 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@babel/runtime-corejs3": "^7.12.5",
+    "ascii-table": "0.0.9",
     "chalk": "^4.1.0",
     "commander": "^6.2.0",
     "core-js": "^3.8.1",
@@ -86,7 +87,7 @@
     "fs-extra": "^9.0.1",
     "glob": "^7.1.6",
     "got": "^11.8.1",
-    "lodash.merge": "^4.6.2",
+    "lodash": "^4.17.20",
     "ora": "^5.1.0",
     "prompts": "^2.4.0",
     "regenerator-runtime": "^0.13.7"
