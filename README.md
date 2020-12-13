@@ -37,7 +37,7 @@ Each boilerplate contains complete development dependencies and workflow from in
 
 After run `happy init`, Happy-Npm-Cli will download specific boilerplate package files and then install dependencies.
 
-![screenshots](./screenshot.gif)
+![screenshots](https://github.com/buyan302/happy-init/blob/main/screenshot.gif)
 
 ### `happy compare`
 
@@ -53,4 +53,4 @@ Execute npm script with environment variables.
 
 ## More Command?
 
-Leave a issue [here](./issues).
+Leave a issue [here](https://github.com/buyan302/happy-init/issues).
