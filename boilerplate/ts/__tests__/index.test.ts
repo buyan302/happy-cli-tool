@@ -1,4 +1,4 @@
-import entry from 'index'
+import entry from '../src'
 
 describe('test src entry', () => {
   it('should get right value', () => {
