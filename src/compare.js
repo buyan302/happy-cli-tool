@@ -1,6 +1,7 @@
 import got from 'got'
 import { get } from 'lodash'
 import AsciiTable from 'ascii-table'
+import ora from 'ora'
 import config from './config'
 
 const fields = [
@@ -144,8 +145,14 @@ function printData(datas) {
 }
 
 export default async (pkgs) => {
-  const metadatas = await Promise.all(pkgs.map(fetchMetadata))
-  const datas = metadatas.map(handleMetaData)
-
-  printData(datas)
+  const progress = ora()
+  progress.start('fetch package metadata...\n')
+  try {
+    const metadatas = await Promise.all(pkgs.map(fetchMetadata))
+    const datas = metadatas.map(handleMetaData)
+    progress.succeed()
+    printData(datas)
+  } catch (e) {
+    progress.fail(e.message)
+  }
 }
