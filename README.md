@@ -47,6 +47,8 @@ Compare packages' download frequency,quality,git star count,etc from https://www
 $ happy compare [package1] [package2] ...
 ```
 
+![screenshots](https://github.com/buyan302/happy-init/blob/main/compare.gif)
+
 ### `happy run`
 
 Inject environment variables into npm script, compatible with different os.
@@ -57,6 +59,8 @@ $ happy run [scriptName] [--env <envConfig>] [--dotenv <dotenv>]
 
 - `--env <envConfig>`: environment variables config
 - `--dotenv <dotenv>`: `.env` file path, default `.env'
+
+![screenshots](https://github.com/buyan302/happy-init/blob/main/run.gif)
 
 Environment variables come from command line,`package.json` file and `.env` file.
 
