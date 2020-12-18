@@ -5,3 +5,4 @@ import 'regenerator-runtime/runtime'
 
 export { default as init } from './init'
 export { default as compare } from './compare'
+export { default as run } from './run'

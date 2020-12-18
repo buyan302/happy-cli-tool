@@ -37,19 +37,68 @@ Each boilerplate contains complete development dependencies and workflow from in
 
 After run `happy init`, Happy-Npm-Cli will download specific boilerplate package files and then install dependencies.
 
-![screenshots](https://github.com/buyan302/happy-init/blob/main/screenshot.gif)
+![screenshots](https://github.com/buyan302/happy-init/blob/main/init.gif)
 
 ### `happy compare`
 
 Compare packages' download frequency,quality,git star count,etc from https://www.npmjs.com/.
 
-### `happy publish`
-
-Publish package to git or npm registry.
+```shell
+$ happy compare [package1] [package2] ...
+```
 
 ### `happy run`
 
-Execute npm script with environment variables.
+Inject environment variables into npm script, compatible with different os.
+
+```shell
+$ happy run [scriptName] [--env <envConfig>] [--dotenv <dotenv>]
+```
+
+- `--env <envConfig>`: environment variables config
+- `--dotenv <dotenv>`: `.env` file path, default `.env'
+
+Environment variables come from command line,`package.json` file and `.env` file.
+
+`package.json` env config format:
+
+```json
+{
+  "scripts": {
+    "[scriptName]": "..."
+  },
+  "env": {
+    "[scriptName]": {
+      "[variable]": "..."
+    }
+  }
+}
+```
+
+Environment variables priority: command line > `package.json` > `.env`.
+
+For example:
+
+```json
+// package.json
+{
+  "scripts": {
+    "build": "babel src --out-dir lib"
+  },
+  "env": {
+    "build": {
+      "NODE_ENV": "test"
+    }
+  }
+}
+```
+
+```yml
+# .env
+NODE_ENV=development
+```
+
+Then executing `happy run build --env NODE_ENV=production` equals `NODE_ENV=production babel src --out-dir lib`
 
 ## More Command?
 
