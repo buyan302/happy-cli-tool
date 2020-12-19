@@ -3,6 +3,6 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
-export { default as init } from './init'
-export { default as compare } from './compare'
-export { default as run } from './run'
+export { default as init } from './command/init'
+export { default as compare } from './command/compare'
+export { default as run } from './command/run'

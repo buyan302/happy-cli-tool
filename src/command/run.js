@@ -3,9 +3,8 @@ import execa from 'execa'
 import path from 'path'
 import { get, merge } from 'lodash'
 import parser from 'dotenv'
-import assert from 'assert'
-import error from './error'
-import config from './config'
+import error from '../utils/error'
+import config from '../config/global'
 
 const crossEnvBin = path.join(__dirname, '../node_modules/cross-env/src/bin/cross-env-shell.js')
 

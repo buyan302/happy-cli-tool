@@ -2,7 +2,7 @@ import got from 'got'
 import { get } from 'lodash'
 import AsciiTable from 'ascii-table'
 import ora from 'ora'
-import config from './config'
+import config from '../config/global'
 
 const fields = [
   'description',
