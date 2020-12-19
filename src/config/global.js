@@ -6,4 +6,5 @@ export default {
   pkgTypes: ['es', 'ts', 'react'],
   registry: 'https://registry.npmjs.org',
   registryHome: 'https://www.npmjs.com',
+  crossEnvBin: require.resolve('cross-env/src/bin/cross-env-shell.js'),
 }
