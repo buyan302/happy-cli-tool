@@ -6,7 +6,7 @@ import parser from 'dotenv'
 import error from '../utils/error'
 import config from '../config/global'
 
-const crossEnvBin = path.join(__dirname, '../node_modules/cross-env/src/bin/cross-env-shell.js')
+const crossEnvBin = require.resolve('cross-env/src/bin/cross-env-shell.js')
 
 // parse env args
 function parseEnvArgs(args = []) {
@@ -59,6 +59,6 @@ export default error((script, options) => {
   const pkgEnv = getPkgEnv(script)
   const dotEnv = getDotEnv(options.dotenv)
   const realCmd = injectEnv(cmd, { cmdEnv, pkgEnv, dotEnv })
-  console.log(realCmd, '\n')
+  console.log(crossEnvBin, realCmd, '\n')
   execa.command(`node ${crossEnvBin} ${realCmd}`, { stdio: 'inherit' })
 })
