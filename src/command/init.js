@@ -1,12 +1,12 @@
 import execa from 'execa'
 import assert from 'assert'
 import path from 'path'
-import {merge} from 'lodash'
+import { merge } from 'lodash'
 import fs from 'fs-extra'
 import glob from 'glob'
 import ora from 'ora'
 import prompts from 'prompts'
-import config from './config'
+import config from '../config/global'
 
 const rootDir = process.cwd()
 const bplTmpPath = path.join(rootDir, 'happy-init/boilerplate')
@@ -128,7 +128,7 @@ export default async (type) => {
     delete inputValues.pkgType
 
     // download process
-    progress.start(`downloading ${pkgType} package from git...`)
+    progress.start(`downloading ${pkgType} package from github...`)
     await downloadBpl(pkgType)
     await copyCommonFiles(pkgType)
     await copyExtendFiles(inputValues)
