@@ -18,23 +18,6 @@ function parseEnvArgs(args = []) {
   return env
 }
 
-// get package script
-function getScriptCmd(script) {
-  const pkgJson = fs.readJSONSync(config.pkgPath)
-  const cmd = get(pkgJson, `scripts.${script}`)
-
-  if (!cmd) {
-    throw new Error(`happy-run: script "${script}" not defined`)
-  }
-
-  return cmd
-}
-
-// get package env config
-function getPkgEnv(script) {
-  return get(fs.readJSONSync(config.pkgPath), `env.${script}`, {})
-}
-
 // get .env config
 function getDotEnv(envPath = '.env') {
   const envAbsPath = path.join(config.root, envPath)
@@ -42,21 +25,18 @@ function getDotEnv(envPath = '.env') {
 }
 
 // inject env
-function injectEnv(cmd, { cmdEnv, pkgEnv, dotEnv }) {
-  const env = merge({}, dotEnv, pkgEnv, cmdEnv)
-  const envStr = Object.keys(env)
-    .reduce((acc, key) => acc.concat(`${key}=${env[key]}`), [])
-    .join(' ')
+function injectEnv({ cmdEnv, dotEnv }) {
+  const env = merge({}, dotEnv, cmdEnv)
 
-  return `${envStr} ${cmd}`
+  Object.keys(env).forEach((key) => {
+    process.env[key] = env[key]
+  })
 }
 
-export default error((script, options) => {
-  const cmd = getScriptCmd(script)
+export default error((cmd, options) => {
   const cmdEnv = parseEnvArgs(options.env)
-  const pkgEnv = getPkgEnv(script)
   const dotEnv = getDotEnv(options.dotenv)
-  const realCmd = injectEnv(cmd, { cmdEnv, pkgEnv, dotEnv })
-  console.log(realCmd, '\n')
-  execa.command(`node ${config.crossEnvBin} ${realCmd}`, { stdio: 'inherit' })
+  injectEnv({ cmdEnv, dotEnv })
+  console.log(cmd, '\n')
+  execa.command(`node ${config.crossEnvBin} ${cmd}`, { stdio: 'inherit' })
 })
