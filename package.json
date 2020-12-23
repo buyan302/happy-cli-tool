@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "cross-env rm -rf es lib",
-    "compile": "babel src --out-dir lib",
+    "compile": "rollup -c",
     "lint": "eslint \"{src,__tests__}/**/*.js\" --fix --format codeframe",
     "lint-staged": "lint-staged",
     "prettier": "prettier -c --write \"**/*.{js,md,json}\"",
@@ -59,6 +59,8 @@
     "@babel/preset-typescript": "^7.12.7",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-node-resolve": "^11.0.1",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.9.1",
     "babel-eslint": "^10.1.0",
