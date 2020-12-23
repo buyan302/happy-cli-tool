@@ -1,9 +1,11 @@
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 import got from 'got'
 import { get } from 'lodash'
 import AsciiTable from 'ascii-table'
 import ora from 'ora'
-import '../../utils/boot'
-import config from '../../config/global'
+import config from 'happy-cli-utils/lib/config'
 
 const fields = [
   'description',

@@ -3,7 +3,9 @@
     [
       "@babel/env",
       {
-        "modules": false
+        "modules": "cjs",
+        "useBuiltIns": "entry",
+        "corejs":3
       }
     ]
   ],

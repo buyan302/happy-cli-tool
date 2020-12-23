@@ -5,9 +5,8 @@ import execa from 'execa'
 import path from 'path'
 import { merge } from 'lodash'
 import parser from 'dotenv'
-import '../../utils/boot'
-import error from '../../utils/error'
-import config from '../../config/global'
+import error from 'happy-cli-utils/lib/error'
+import config from 'happy-cli-utils/lib/config'
 
 // parse env args
 function parseEnvArgs(args = []) {

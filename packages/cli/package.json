@@ -1,0 +1,38 @@
+{
+  "name": "happy-cli-tool",
+  "version": "1.0.0",
+  "description": "npm cli tool",
+  "main": "index.js",
+  "bin": {
+    "happy": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buyan302/happy-init.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "cli",
+    "tool",
+    "npm"
+  ],
+  "author": "buyan302",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buyan302/happy-init/issues"
+  },
+  "homepage": "https://github.com/buyan302/happy-init#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "peerDependencies": {
+    "happy-init": "^1.0.0",
+    "happy-compare": "^1.0.0",
+    "happy-run": "^1.0.0"
+  },
+  "dependencies": {
+    "commander": "^6.2.0"
+  }
+}

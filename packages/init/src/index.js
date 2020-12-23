@@ -8,8 +8,7 @@ import fs from 'fs-extra'
 import glob from 'glob'
 import ora from 'ora'
 import prompts from 'prompts'
-import '../../utils/boot'
-import config from '../../config/global'
+import config from 'happy-cli-utils/lib/config'
 
 const rootDir = process.cwd()
 const bplTmpPath = path.join(rootDir, 'happy-init/boilerplate')

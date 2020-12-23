@@ -1,16 +1,20 @@
 # Happy-cli-tool
 
-Happy-cli-tool is a cli tool that help you develop and release npm package easily.
+**Happy-cli-tool** is a cli tool that help you develop and release npm package easily.
 
-Happy-cli-tool is designed for:
+**Happy-cli-tool** supports executing these following commands:
 
-> Initial easily, develop quickly, publish confidently.
+- [`happy init`](https://github.com/buyan302/happy-init/blob/main/packages/init/README.md)
+- [`happy run`](https://github.com/buyan302/happy-init/blob/main/packages/run/README.md)
+- [`happy compare`](https://github.com/buyan302/happy-init/blob/main/packages/compare/README.md)
 
-Happy-cli-tool contains these following commands:
+## Installation
 
-- [`happy init`](#happy-init)
-- [`happy run`](#happy-run)
-- [`happy compare`](#happy-compare)
+Before use specific command, you should install **happy-cli-tool** first.
+
+```shell
+$ npm i happy-cli-tool -g
+```
 
 ## More Command?
 
