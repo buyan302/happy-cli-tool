@@ -11,10 +11,9 @@ $ npm install happy-cli-tool happy-run -g
 ## Usage
 
 ```shell
-$ happy run [cmd] [--env <envConfig>] [--dotenv <dotenv>]
+$ happy run [cmd] [--dotenv <dotenv>]
 ```
 
-- `--env <envConfig>`: environment variables config
 - `--dotenv <dotenv>`: `.env` file path, default `.env`
 
 ![screenshots](https://github.com/buyan302/happy-init/blob/main/run.gif)
@@ -32,4 +31,4 @@ For example, suppose your environment has been set `process.env.NODE_ENV=develop
 NODE_ENV=test
 ```
 
-Then executing `happy run \"echo $NODE_ENV\" --env NODE_ENV=production` equals `NODE_ENV=production echo $NODE_ENV`
+Then executing `happy run NODE_ENV=production "echo NODE_ENV=\$NODE_ENV"` will output `NODE_ENV=production`

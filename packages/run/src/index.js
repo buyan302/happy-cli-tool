@@ -3,7 +3,7 @@ import 'regenerator-runtime/runtime'
 import fs from 'fs-extra'
 import execa from 'execa'
 import path from 'path'
-import { merge } from 'lodash'
+import { merge, last } from 'lodash'
 import parser from 'dotenv'
 import error from 'happy-cli-utils/lib/error'
 import config from 'happy-cli-utils/lib/config'
@@ -35,8 +35,9 @@ function injectEnv({ cmdEnv, dotEnv }) {
   })
 }
 
-export default error((cmd, options) => {
-  const cmdEnv = parseEnvArgs(options.env)
+export default error((cmds, options) => {
+  const cmd = last(cmds)
+  const cmdEnv = parseEnvArgs(cmds.slice(0, -1))
   const dotEnv = getDotEnv(options.dotenv)
   injectEnv({ cmdEnv, dotEnv })
   console.log(cmd, '\n')

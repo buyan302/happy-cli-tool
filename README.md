@@ -1,6 +1,6 @@
 # Happy-cli-tool
 
-**Happy-cli-tool** is a cli tool that help you develop and release npm package easily.
+**Happy-cli-tool** is a cli tool that enhance npm cli's feature.
 
 **Happy-cli-tool** supports executing these following commands:
 

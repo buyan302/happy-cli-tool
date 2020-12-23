@@ -21,9 +21,8 @@ commander
   .description('compare packages info')
   .action(loadCmd('happy-compare'))
 commander
-  .command('run <cmd>')
+  .command('run <cmd...>')
   .description('Inject environment variables into any command, compatible with different os')
-  .option('--env <env...>', 'set environment variables')
   .option('--dotenv <dotenv>', '.env file path')
   .action(loadCmd('happy-run'))
 
