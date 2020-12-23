@@ -1,3 +1,5 @@
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 import execa from 'execa'
 import assert from 'assert'
 import path from 'path'
@@ -6,7 +8,8 @@ import fs from 'fs-extra'
 import glob from 'glob'
 import ora from 'ora'
 import prompts from 'prompts'
-import config from '../config/global'
+import '../../utils/boot'
+import config from '../../config/global'
 
 const rootDir = process.cwd()
 const bplTmpPath = path.join(rootDir, 'happy-init/boilerplate')

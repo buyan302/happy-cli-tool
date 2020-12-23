@@ -1,10 +1,13 @@
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 import fs from 'fs-extra'
 import execa from 'execa'
 import path from 'path'
-import { get, merge } from 'lodash'
+import { merge } from 'lodash'
 import parser from 'dotenv'
-import error from '../utils/error'
-import config from '../config/global'
+import '../../utils/boot'
+import error from '../../utils/error'
+import config from '../../config/global'
 
 // parse env args
 function parseEnvArgs(args = []) {
