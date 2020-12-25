@@ -5,10 +5,15 @@
   "version": "1.0.0",
   "command": {
     "bootstrap": {
-      "npmClientArgs": ["--no-package-lock", "--registry=https://registry.npmjs.org/"]
+      "npmClientArgs": [
+        "--no-package-lock",
+        "--registry=https://registry.npmjs.org/"
+      ]
     },
     "publish": {
-      "ignoreChanges": ["**/*.md"],
+      "ignoreChanges": [
+        "**/*.md"
+      ],
       "message": "chore: publish",
       "registry": "https://registry.npmjs.org/"
     }

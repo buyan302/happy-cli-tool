@@ -28,8 +28,8 @@
     "node": ">=12.0.0"
   },
   "peerDependencies": {
-    "happy-init": "^1.0.0",
     "happy-compare": "^1.0.0",
+    "happy-init": "^1.0.0",
     "happy-run": "^1.0.0"
   },
   "dependencies": {
