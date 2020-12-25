@@ -11,7 +11,7 @@ import prompts from 'prompts'
 import config from 'happy-cli-utils/lib/config'
 
 const rootDir = process.cwd()
-const bplTmpPath = path.join(rootDir, 'happy-init/boilerplate')
+const bplTmpPath = path.join(rootDir, 'happy-cli-tool/boilerplate')
 const commonFilePath = path.join(bplTmpPath, 'common')
 const extendFilePath = path.join(bplTmpPath, 'extend')
 
@@ -63,7 +63,7 @@ async function handleInput(origin, type = 'es') {
 
 // download boilerplate
 function downloadBpl() {
-  return execa.command(`git clone https://github.com/buyan302/happy-init.git`)
+  return execa.command(`git clone https://github.com/buyan302/happy-cli-tool.git`)
 }
 
 // copy common to root
@@ -100,7 +100,7 @@ function copyExtendFiles(inputValues) {
 
 // clear invalid files
 function clearFiles() {
-  return execa.command(`rm -rf happy-init`)
+  return execa.command(`rm -rf happy-cli-tool`)
 }
 
 // rename _pkg.json
@@ -115,7 +115,7 @@ function npmInstall() {
 
 // error-handler
 function handleError(e) {
-  console.error('\x1b[31m%s\x1b[0m', `happy-init: ${e.message}`)
+  console.error('\x1b[31m%s\x1b[0m', `happy-cli-tool: ${e.message}`)
   process.exit(1)
 }
 

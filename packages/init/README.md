@@ -16,7 +16,7 @@ A robust npm package should concern following aspects:
 ## Installation
 
 ```shell
-$ npm install happy-npm-cli happy-init -g
+$ npm install happy-cli-tool happy-init -g
 ```
 
 ## Usage
@@ -37,4 +37,4 @@ Each boilerplate contains complete development dependencies and workflow from in
 
 After run `happy init`, Happy-Npm-Cli will download specific boilerplate package files and then install dependencies.
 
-![screenshots](https://github.com/buyan302/happy-init/blob/main/init.gif)
+![screenshots](https://github.com/buyan302/happy-cli-tool/blob/main/init.gif)

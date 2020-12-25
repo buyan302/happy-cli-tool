@@ -1,5 +1,5 @@
 {
-  "name": "happy-init",
+  "name": "happy-cli-tool",
   "version": "1.0.0",
   "description": "npm cli tool",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buyan302/happy-init.git"
+    "url": "git+https://github.com/buyan302/happy-cli-tool.git"
   },
   "keywords": [
     "cli",
@@ -29,9 +29,9 @@
   "author": "buyan302",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/buyan302/happy-init/issues"
+    "url": "https://github.com/buyan302/happy-cli-tool/issues"
   },
-  "homepage": "https://github.com/buyan302/happy-init#readme",
+  "homepage": "https://github.com/buyan302/happy-cli-tool#readme",
   "lint-staged": {
     "**/*.js": [
       "npm run lint",

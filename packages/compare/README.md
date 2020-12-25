@@ -15,4 +15,4 @@ $ npm install happy-cli-tool happy-compare -g
 $ happy compare [package1] [package2] ...
 ```
 
-![screenshots](https://github.com/buyan302/happy-init/blob/main/compare.gif)
+![screenshots](https://github.com/buyan302/happy-cli-tool/blob/main/compare.gif)

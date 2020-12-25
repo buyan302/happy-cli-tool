@@ -16,7 +16,7 @@ $ happy run [cmd] [--dotenv <dotenv>]
 
 - `--dotenv <dotenv>`: `.env` file path, default `.env`
 
-![screenshots](https://github.com/buyan302/happy-init/blob/main/run.gif)
+![screenshots](https://github.com/buyan302/happy-cli-tool/blob/main/run.gif)
 
 ## Caveats
 
