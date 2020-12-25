@@ -1,6 +1,6 @@
 {
   "name": "happy-cli-tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npm cli tool",
   "main": "index.js",
   "bin": {
@@ -28,8 +28,8 @@
     "node": ">=12.0.0"
   },
   "peerDependencies": {
-    "happy-compare": "^1.0.0",
     "happy-cli-tool": "^1.0.0",
+    "happy-compare": "^1.0.0",
     "happy-run": "^1.0.0"
   },
   "dependencies": {
